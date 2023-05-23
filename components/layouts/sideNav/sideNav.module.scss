@@ -1,0 +1,53 @@
+@use '/styles/mixins';
+@use '/styles/desktop';
+@use '/styles/moblie';
+@use '/styles/tablet';
+
+
+.container{
+    width: 100%;
+    background: var(--secondary-color);
+    height: fit-content;
+    padding: 2rem 2.4rem;
+
+
+    @include tablet.tablet{
+        width: fit-content;
+        max-width: 15dvw;
+        padding: 1rem 1.2rem;
+        height: 100dvh;
+        @include mixins.flexDisplay(flex-start, center, column);
+        gap: 6.4rem;
+    }
+
+    .head{
+        @include mixins.flexDisplay(flex-start, center, row);
+        position: relative;
+    }
+
+    .body{
+        width: 100dvw;
+        height: calc(100dvh - 10%);
+        background: var(--secondary-color);
+        position: absolute;
+        left: 0;
+        @include mixins.flexDisplay(center,center,row);
+        overflow: scroll;
+
+        @include tablet.tablet{
+            position: relative;
+            width: fit-content;
+            overflow: hidden;
+            background: transparent;
+            height: 75%;
+
+        }
+
+        .nav{
+            height: 80%;
+            width: 80%;
+            @include mixins.flexDisplay(space-between,flex-start,column);
+        }
+    }
+
+}

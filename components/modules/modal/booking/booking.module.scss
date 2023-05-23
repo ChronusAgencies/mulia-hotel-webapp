@@ -1,0 +1,52 @@
+@use '/app/styles/mixins';
+
+.wrapper{
+    width: 100%;
+    min-height: calc(100dvh - (var(--pos-y) + 1rem));
+    background: var(--tertier-color);
+    padding: 2.4rem;
+    @include mixins.flexDisplay(flex-start, center, column);
+
+    .container{
+        width: 100%;
+        height: 90%;
+        @include mixins.gridDisplay(2,6,1.6rem,1.6rem);
+        place-items: center;
+
+
+        .input_container{
+            width: 100%;
+            height: 100%;
+            @include mixins.flexDisplay(space-between, flex-start, column);
+
+            &:nth-child(1){
+                grid-area: 1/1/1/span 2;
+            }
+            &:nth-child(2){
+                grid-area: 2/1/2/span 2;
+            }
+            &:nth-child(3){
+                grid-area: 3/1/3/span 2;
+            }
+
+            label{
+                @include mixins.fontOpts(var(--primary-font-bold), var(--paragraf-md), var(--secondary-color));
+                font-weight: 700;
+            }
+
+            .input{
+                width: 100%;
+                position: relative;
+            }
+        }
+    }
+}
+
+.icon{
+    svg{
+        path{
+            fill: var(--secondary-color);
+            fill-opacity: .46;
+        }
+    }
+}

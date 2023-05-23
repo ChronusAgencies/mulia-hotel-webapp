@@ -1,0 +1,70 @@
+@font-face {
+    font-family: "Satoshi-Regular";
+    src: url('/public/Fonts/Satoshi/Satoshi-Regular.woff');
+    font-family: "Satoshi-Medium";
+    src: url('/public/Fonts/Satoshi/Satoshi-Medium.woff');
+    font-family: "Satoshi-Bold";
+    src: url('/public/Fonts/Satoshi/Satoshi-Bold.woff');
+    font-family: 'Quicksand-Regular';
+    src: url('/public/Fonts/Quicksand/Quicksand-Regular.woff');
+    font-family: 'Quicksand-Medium';
+    src: url('/public/Fonts/Quicksand/Quicksand-Medium.woff');
+    font-family: 'Quicksand-Bold';
+    src: url('/public/Fonts/Quicksand/Quicksand-Bold.woff');
+  }
+  
+  :root{
+  
+    // Color Variable
+    --primary-color : #F9F9F9;
+    --secondary-color : #232323;
+    --tertier-color : #D7B865;
+  
+    // Font Variable Primary
+    --primary-font-regular : 'Satoshi-Regular';
+    --primary-font-medium : 'Satoshi-Medium';
+    --primary-font-bold : 'Satoshi-Bold';
+  
+    // Font Variable Secondary
+    --secondary-font-regular : 'Quicksand-Regular';
+    --secondary-font-medium : 'Quicksand-Medium';
+    --secondary-font-bold : 'Quicksand-Bold';
+  
+    //Paragraf Font Size Variable
+    --paragraf-sm : 1.2rem;
+    --paragraf-md : 1.6rem;
+    --paragraf-lg : 2rem;
+    --paragraf-xl : 2.4rem;
+  
+    // Header Font Size Variable
+    --header-sm : 3.2rem;
+    --header-md : 4.6rem;
+    --header-lg : 6.4rem;
+  
+    // Global position
+    --pos-y : 4.8rem;
+  
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: calc(.625 * 16px);
+  }
+  
+  a{
+    text-decoration: none;
+    color: var(--secondary-color);
+  }
+  
+  ul{
+    list-style: none;
+  }
+  
+  button,
+  input{
+    background: transparent;
+    outline: none;
+    border: none;
+  }

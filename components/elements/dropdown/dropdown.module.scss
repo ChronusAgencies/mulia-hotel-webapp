@@ -1,0 +1,13 @@
+@use '/app/styles/mixins';
+
+.container{
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    @include mixins.flexDisplay(center,flex-end,column);
+    transition: all .6s;
+
+    &.isOpen{
+        height: 25dvh;
+    }
+}

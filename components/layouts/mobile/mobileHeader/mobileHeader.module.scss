@@ -1,0 +1,9 @@
+@use '/app/styles/mixins';
+.wrapper{
+    padding: .8rem 2.4rem;
+    background: var(--secondary-color);
+
+    @include mixins.media(768px){
+        display: none;
+    }
+}

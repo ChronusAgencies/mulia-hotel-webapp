@@ -1,0 +1,8 @@
+@use '/app/styles/mixins';
+
+.container{
+    width: 100%;
+    height: auto;
+    @include mixins.flexDisplay(center,center,column);
+    background: var(--primary-color);
+}
