@@ -1,0 +1,70 @@
+@use '/app/styles/mixins';
+
+.container{
+    width: 4rem;
+    height: 4rem;
+    @include mixins.flexDisplay(center,center,column);
+    position: relative;
+    cursor: pointer;
+
+    @include mixins.media(768px){
+        height: 3.2rem;
+    }
+
+    span{
+        background: var(--tertier-color);
+        border-radius: 2rem;
+        height: .6rem;
+        width: 90%;
+        position: absolute;
+        transition: .6s;
+
+        &:first-child,
+        &:last-child{
+            width: 75%;
+            transform-origin: right;
+        }
+
+        &:first-child{
+            transform: translate(0,-200%);
+        }
+        &:last-child{
+            transform: translate(0,200%);
+        }
+    }
+
+    &.isActive{
+        span{
+            &:first-child,
+            &:last-child{
+                width: 45%;
+            }
+
+            &:first-child{
+                animation: toggleAnimation1 .3s linear forwards;
+            }
+            &:last-child{
+                animation: toggleAnimation2 .3s linear forwards;
+            }
+        }
+    }
+}
+
+@keyframes toggleAnimation1{
+    0%{
+        width: 45%;
+        transform: translate(0,-200%);
+    }
+    100%{
+        transform: translate(-100%,-200%) rotate(-45deg);
+    }
+}
+@keyframes toggleAnimation2{
+    0%{
+        width: 45%;
+        transform: translate(0,200%);
+    }
+    100%{
+        transform: translate(-100%,200%) rotate(45deg);
+    }
+}

@@ -1,0 +1,25 @@
+@use '/app/styles/mixins';
+
+.container{
+    width: 100%;
+    position: absolute;
+    margin-top: 1rem;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform .6s;
+    z-index: 10;
+    cursor: pointer;
+
+    &.isShow{
+        transform: scaleY(1);
+    }
+}
+
+.fixed_opts{
+    height: auto;
+    @include mixins.flexDisplay(center, center, column);
+}
+.dynamic_opts{
+    height: calc(3 * 4.8rem);
+    overflow: scroll;
+}
